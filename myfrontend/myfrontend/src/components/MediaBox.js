@@ -15,7 +15,7 @@ const MediaBox = () => {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [mediaList.length]);
 
   return (
     <div style={{backgroundColor: 'purple', color: 'white'}}>
