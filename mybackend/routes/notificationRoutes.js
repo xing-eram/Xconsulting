@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const Notification = require('./models/Notification');  // Asegúrate de que la ruta sea correcta
+const Notification = require('../models/Notification');
 
-// Crear una nueva dirección de correo electrónico para notificaciones
-router.post('/notifications', async (req, res) => {
+router.post('/', async (req, res) => {
   const { email } = req.body;
+
   try {
     const newEmail = new Notification({ email });
     await newEmail.save();
@@ -14,8 +14,7 @@ router.post('/notifications', async (req, res) => {
   }
 });
 
-// Obtener todas las direcciones de correo electrónico para notificaciones
-router.get('/notifications', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const emails = await Notification.find();
     res.status(200).json(emails);
@@ -24,8 +23,7 @@ router.get('/notifications', async (req, res) => {
   }
 });
 
-// Eliminar una dirección de correo electrónico
-router.delete('/notifications/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     await Notification.findByIdAndDelete(req.params.id);
     res.status(200).json({ message: 'Correo electrónico eliminado con éxito' });
