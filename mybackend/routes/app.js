@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const notificationRoutes = require('./routes/notificationRoutes');
+const userRoutes = require('./routes/userRoutes');  // Añade esta línea
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(bodyParser.json());
 
 // Rutas
 app.use('/notifications', notificationRoutes);
+app.use('/users', userRoutes);  // Añade esta línea
 
 // Iniciar el servidor
 const PORT = process.env.PORT || 3000;

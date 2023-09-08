@@ -1,16 +1,28 @@
 import React from 'react';
 import './App.css';
-import NavBar from './components/NavBar';  // Importa el componente NavBar
-import MediaBox from './components/MediaBox';  // Importa el componente MediaBox
-import WhiteBox from './components/WhiteBox';  // Importa el componente WhiteBox
+import NavBar from './components/NavBar';
+import MediaBox from './components/MediaBox';
+import WhiteBox from './components/WhiteBox';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />  {/* Usa el componente NavBar */}
-      <MediaBox />  {/* Usa el componente MediaBox */}
-      <WhiteBox />  {/* Usa el componente WhiteBox */}
-      {/* Otros componentes aquí */}
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <NavBar />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          <MediaBox />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          <WhiteBox />
+        </div>
+      </div>
     </div>
   );
 }
