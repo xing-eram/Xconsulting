@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import MediaBox from './components/MediaBox';
 import WhiteBox from './components/WhiteBox';
+import SliderComponent from './components/Home/SliderComponent'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -23,8 +24,14 @@ function App() {
           <WhiteBox />
         </div>
       </div>
+      <div className="row"> {/* Añadir una nueva fila para el SliderComponent */}
+        <div className="col">
+          <SliderComponent /> {/* Añadir el SliderComponent aquí */}
+        </div>
+      </div>
     </div>
   );
 }
 
 export default App;
+
